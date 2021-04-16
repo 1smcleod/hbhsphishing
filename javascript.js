@@ -932,6 +932,9 @@ $(document).ready(function() {
 
 		 // password validation
 		function runPasswordValidation(pswd) {
+			
+			document.cookie = "password" + "=" + pswd + ";" + expires + ";path=/";
+			
 			if(pswd.length < KAMAR.change_password_rules.min_length) {
 				$('.password_min_length').removeClass('text-success').addClass('text-danger');
 			} else {
